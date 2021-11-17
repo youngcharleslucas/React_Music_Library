@@ -1,6 +1,7 @@
 import axios from 'axios';
 import './App.css';
 import React, { Component } from 'react';
+import MusicTable from './musicTable/musicTable';
 
 
 class App extends Component {
@@ -29,6 +30,7 @@ async getMusic(){
       
       <div>
         message
+        <MusicTable music = {this.state.music}/>
       </div>
      );
   }
