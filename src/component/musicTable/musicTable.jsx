@@ -7,6 +7,21 @@ class MusicTable extends Component {
         this.state = { 
          }
     }
+
+    handleSubmit = (event) => {
+        event.preventDefault()
+    }
+
+    deleteSong(songID, event){
+        console.log(songID)
+        this.handleSubmit(event)
+        axios.delete(`http://localhost:8000/music/${songID}/`)
+        .then (response =>
+            console.log("Deleted", response)
+            )
+        
+    }
+
     songList = () => {
         
         let musicItem = this.props.music.map(item => {
@@ -18,6 +33,7 @@ class MusicTable extends Component {
                     <td>{item.album}</td>
                     <td>{item.genre}</td>
                     <td>{item.release_date}</td>
+                    <td><button onClick={(event) => this.deleteSong(item.id, event)}>Delete Song</button></td>
                 </tr>
             )
         });
