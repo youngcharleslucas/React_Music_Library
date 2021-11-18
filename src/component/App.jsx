@@ -2,6 +2,7 @@ import axios from 'axios';
 import './App.css';
 import React, { Component } from 'react';
 import MusicTable from './musicTable/musicTable';
+import SongPost from './songPOST/songPOST';
 
 
 class App extends Component {
@@ -35,7 +36,7 @@ class App extends Component {
   // }
   handleSubmit = (event) => {
     event.preventDefault()
-}
+  }
 
   deleteSong(songID, event){
     console.log(songID)
@@ -43,9 +44,15 @@ class App extends Component {
     axios.delete(`http://localhost:8000/music/${songID}/`)
     .then (response =>
         console.log("Deleted", response)
-        )
-    
-}
+        )    
+  }
+
+  songPOST(newSong){
+    axios.post(`http://localhost:8000/music/`, newSong)
+    .then (response =>
+        console.log("Post", response)
+    )    
+  }
 
   render() { 
     console.log(this.state.music[0])
@@ -54,6 +61,8 @@ class App extends Component {
       <div>
         message
         <MusicTable music = {this.state.music} deleteSong = {this.deleteSong}/>
+        <SongPost songPOST = {this.songPOST}/>
+
       </div>
      );
   }
