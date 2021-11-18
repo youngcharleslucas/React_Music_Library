@@ -14,8 +14,7 @@ class MusicTable extends Component {
   deleteSong(songID, event) {
     console.log(songID);
     this.handleSubmit(event);
-    axios
-      .delete(`http://localhost:8000/music/${songID}/`)
+    axios.delete(`http://localhost:8000/music/${songID}/`)
       .then((response) => console.log("Deleted", response));
   }
 

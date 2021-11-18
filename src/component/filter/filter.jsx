@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import './filter.css';
 
 class Filter extends Component {
     constructor(props) {
@@ -218,7 +219,7 @@ class Filter extends Component {
 
     render() { 
         return ( 
-            <div>
+            <div className="navbar">
                 {/* <form onSubmit={this.handleSubmit}>
                     <label>Song ID</label>
                     <input name='id' onChange={this.handleChange} value={this.state.id}/>
@@ -235,7 +236,8 @@ class Filter extends Component {
                     <button type='submit'>Find Song</button>
                 </form>
                 {this.filterSongList()} */}
-                <input type='text' onChange={this.props.handleChange} value={this.props.userinput}/>
+                
+                <h4>Search<input type='text' onChange={this.props.handleChange} value={this.props.userinput}/></h4>
             </div>
             
          );
