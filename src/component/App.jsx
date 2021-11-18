@@ -16,12 +16,35 @@ class App extends Component {
     this.getMusic();
   }
 
-async getMusic(){
-  let response = await axios.get("http://127.0.0.1:8000/music/")
-  console.log(response);
-  this.setState({
-    music: response.data
-  })
+  async getMusic(){
+    let response = await axios.get("http://127.0.0.1:8000/music/")
+    console.log(response);
+    this.setState({
+      music: response.data
+    })
+  }
+
+  // songPost = (newSong) => {
+  //   console.log('From the songPost on App component', newSong);
+
+  // }
+  // async songPost = (newSong) => {
+  //   let response = 
+  //   console.log('From the songPost on App component', newSong)
+    
+  // }
+  handleSubmit = (event) => {
+    event.preventDefault()
+}
+
+  deleteSong(songID, event){
+    console.log(songID)
+    this.handleSubmit(event)
+    axios.delete(`http://localhost:8000/music/${songID}/`)
+    .then (response =>
+        console.log("Deleted", response)
+        )
+    
 }
 
   render() { 
@@ -30,7 +53,7 @@ async getMusic(){
       
       <div>
         message
-        <MusicTable music = {this.state.music}/>
+        <MusicTable music = {this.state.music} deleteSong = {this.deleteSong}/>
       </div>
      );
   }
