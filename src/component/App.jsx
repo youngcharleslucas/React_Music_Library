@@ -3,13 +3,15 @@ import './App.css';
 import React, { Component } from 'react';
 import MusicTable from './musicTable/musicTable';
 import SongPost from './songPOST/songPOST';
+import Filter from './filter/filter';
 
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = { 
-      music: []
+      music: [],
+      userinput: '',
      }
   }
 
@@ -25,6 +27,14 @@ class App extends Component {
     })
   }
 
+  handleChange = (event) => {
+    console.log(event.target.value)
+    this.setState({
+        userinput : event.target.value,
+    })
+  }
+
+
   // songPost = (newSong) => {
   //   console.log('From the songPost on App component', newSong);
 
@@ -34,18 +44,18 @@ class App extends Component {
   //   console.log('From the songPost on App component', newSong)
     
   // }
-  handleSubmit = (event) => {
-    event.preventDefault()
-  }
+  // handleSubmit = (event) => {
+  //   event.preventDefault()
+  // }
 
-  deleteSong(songID, event){
-    console.log(songID)
-    this.handleSubmit(event)
-    axios.delete(`http://localhost:8000/music/${songID}/`)
-    .then (response =>
-        console.log("Deleted", response)
-        )    
-  }
+  // deleteSong(songID, event){
+  //   console.log(songID)
+  //   this.handleSubmit(event)
+  //   axios.delete(`http://localhost:8000/music/${songID}/`)
+  //   .then (response =>
+  //       console.log("Deleted", response)
+  //       )    
+  // }
 
   songPOST(newSong){
     axios.post(`http://localhost:8000/music/`, newSong)
@@ -60,8 +70,10 @@ class App extends Component {
       
       <div>
         message
-        <MusicTable music = {this.state.music} deleteSong = {this.deleteSong}/>
+        <MusicTable music = {this.state.music} deleteSong = {this.deleteSong} userinput = {this.state.userinput}/>
         <SongPost songPOST = {this.songPOST}/>
+        {/* <Filter music = {this.state.music}/> */}
+        <Filter handleChange = {this.handleChange} userinput = {this.state.userinput}/>
 
       </div>
      );

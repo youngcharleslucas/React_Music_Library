@@ -44,6 +44,7 @@ class SongPost extends Component {
     render() { 
         return ( 
             <form onSubmit={this.handleSubmit}>
+            {/* <form onSubmit={(event) => this.props.songPOST(this.state, event)}> */}
                 {/* <label>{id}</label> */}
                 <label>Song Title</label>
                 <input name='title' onChange={this.handleChange} value={this.state.title}/>
