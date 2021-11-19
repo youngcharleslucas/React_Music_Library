@@ -72,8 +72,8 @@ class App extends Component {
         <MusicTable music = {this.state.music} deleteSong = {this.deleteSong} userinput = {this.state.userinput}/>
         <SongPost songPOST = {this.songPOST}/>
         {/* <Filter music = {this.state.music}/> */}
-        {/* <Filter handleChange = {this.handleChange} userinput = {this.state.userinput} songPOST = {this.songPOST}/> */}
-        <Filter songPOST = {this.songPOST}/>
+        <Filter handleChange = {this.handleChange} userinput = {this.state.userinput}/>
+        
 
       </div>
      );
