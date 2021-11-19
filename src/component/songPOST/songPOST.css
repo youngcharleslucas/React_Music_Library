@@ -1,0 +1,60 @@
+/* DIV.table {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 3em;
+}
+
+SPAN.td, SPAN.th {
+    border: 1px solid #ddd;
+    padding: 8px;
+    column-width: 200px;
+}
+      
+/* FORM.tr{background-color: #f2f2f2;} */
+
+/* DIV.th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #563a61;
+    color: white;
+    width: 100%,
+} */ 
+
+/* .grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-gap: 10px;
+    background-color: #2196F3;
+    padding: 10px;
+  }
+   */
+.grid-container {
+    display: grid;
+    grid-auto-flow: column;
+    /* padding-left: 2em; */
+    grid-auto-columns: minmax(100px, 1fr);
+}
+  
+
+.grid-container > span {
+    /* background-color: rgba(255, 255, 255, 0.8); */
+    text-align: left;
+    padding: 0px 0;
+    font-size: 150%;
+  }
+
+DIV > span {
+    font-family: Arial, Helvetica, sans-serif;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #563a61;
+    color: white;
+    width: 100%,
+} 
+
+.item1 {
+    padding-left: 20px;
+}
