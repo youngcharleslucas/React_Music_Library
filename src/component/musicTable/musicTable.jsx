@@ -5,7 +5,9 @@ import './musicTable.css'
 class MusicTable extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+       
+    };
   }
 
   handleSubmit = (event) => {
