@@ -11,7 +11,7 @@ class SongPost extends Component {
             album : '',
             genre : '',
             release_date : '',
-         }
+        }
     }
 
 // export default ;
@@ -37,11 +37,23 @@ class SongPost extends Component {
         })
     }
 
+    // handleError = () => {
+    //     if (this.state.release_date != <=3000 + '-' + )
+    // }
+
+    // handleSubmit = (event) => {
+    //     event.preventDefault();
+    //     this.props.songPOST(this.state);
+       
+    // }
+
     handleSubmit = (event) => {
         event.preventDefault();
-        this.props.songPOST(this.state)
+        this.props.songPOST(this.state);
+        this.props.refresh();       
     }
-       
+           
+
     render() { 
         return ( 
             // <div className="table">
@@ -79,6 +91,7 @@ class SongPost extends Component {
             //         <span class="td"><button type='submit'>Add Song</button></span>
             //     </form>
             // </div>
+        
             <div>
             <div className="grid-container">
                 <span className="item1"><label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Song Title</label></span>
@@ -93,7 +106,7 @@ class SongPost extends Component {
                 <span className="item2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input name='artist' onChange={this.handleChange} value={this.state.artist}/></span>
                 <span className="item3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input name='album' onChange={this.handleChange} value={this.state.album}/></span>
                 <span className="item4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input name='genre' onChange={this.handleChange} value={this.state.genre}/></span>
-                <span className="item5">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input name='release_date' onChange={this.handleChange} value={this.state.release_date}/></span>
+                <span className="item5">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input name='release_date' type="date" placeholder='yyyy-mm-dd' onChange={this.handleChange} value={this.state.release_date}/></span>
                 <span className="item6">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button type='submit'>Add Song</button></span>
             </form>
             </div>

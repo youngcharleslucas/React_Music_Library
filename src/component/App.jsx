@@ -27,6 +27,12 @@ class App extends Component {
     })
   }
 
+  refresh(){
+    window.location.reload()
+    console.log("refresh");
+  }
+
+
   handleChange = (event) => {
     console.log(event.target.value)
     this.setState({
@@ -69,8 +75,8 @@ class App extends Component {
     return ( 
       
       <div className="container-fluid">
-        <MusicTable music = {this.state.music} deleteSong = {this.deleteSong} userinput = {this.state.userinput}/>
-        <SongPost songPOST = {this.songPOST}/>
+        <MusicTable music = {this.state.music} deleteSong = {this.deleteSong} userinput = {this.state.userinput} refresh = {this.refresh}/>
+        <SongPost songPOST = {this.songPOST} refresh = {this.refresh}/>
         {/* <Filter music = {this.state.music}/> */}
         <Filter handleChange = {this.handleChange} userinput = {this.state.userinput}/>
         

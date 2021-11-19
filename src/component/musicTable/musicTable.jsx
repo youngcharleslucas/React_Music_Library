@@ -19,6 +19,7 @@ class MusicTable extends Component {
     this.handleSubmit(event);
     axios.delete(`http://localhost:8000/music/${songID}/`)
       .then((response) => console.log("Deleted", response));
+    this.props.refresh()
   }
 
   songList = () => {
