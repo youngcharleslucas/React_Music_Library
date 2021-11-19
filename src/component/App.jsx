@@ -75,6 +75,7 @@ class App extends Component {
     return ( 
       
       <div className="container-fluid">
+        
         <MusicTable music = {this.state.music} deleteSong = {this.deleteSong} userinput = {this.state.userinput} refresh = {this.refresh}/>
         <SongPost songPOST = {this.songPOST} refresh = {this.refresh}/>
         {/* <Filter music = {this.state.music}/> */}

@@ -238,6 +238,7 @@ class Filter extends Component {
                 {this.filterSongList()} */}
                 
                 <h4>Search&nbsp;&nbsp;<input type='text' onChange={this.props.handleChange} value={this.props.userinput}/></h4>
+                <h1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Music Table</h1>
             </div>
             
          );
