@@ -59,15 +59,15 @@ class MusicTable extends Component {
 
   render() {
     return (
-      <div>
+      <div id="div">
         <ul>
           {this.props.music.map((song) =>
-            this.props.userinput === song.artist ||
-            this.props.userinput === song.title ||
-            this.props.userinput === song.album ||
-            this.props.userinput === song.genre ||
+            this.props.userinput.toUpperCase() === song.artist.toUpperCase() ||
+            this.props.userinput.toUpperCase() === song.title.toUpperCase() ||
+            this.props.userinput.toUpperCase() === song.album.toUpperCase() ||
+            this.props.userinput.toUpperCase() === song.genre.toUpperCase() ||
             this.props.userinput === song.release_date ? (
-              <li>{song.title}</li>
+              <li>{song.title}&nbsp;&nbsp;{song.artist}&nbsp;&nbsp;{song.album}&nbsp;&nbsp;{song.genre}&nbsp;&nbsp;{song.release_date}</li>
             ) : null
           )}
         </ul>
