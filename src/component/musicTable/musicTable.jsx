@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
+import './musicTable.css'
 
 class MusicTable extends Component {
   constructor(props) {
@@ -22,31 +23,36 @@ class MusicTable extends Component {
     let musicItem = this.props.music.map((item) => {
       return (
         <tr>
-          <td>{item.id}</td>
-          <td>{item.title}</td>
-          <td>{item.artist}</td>
-          <td>{item.album}</td>
-          <td>{item.genre}</td>
-          <td>{item.release_date}</td>
-          <td>
-            <button onClick={(event) => this.deleteSong(item.id, event)}>
-              Delete Song
-            </button>
-          </td>
+            <td>{item.id}</td>
+            <td>{item.title}</td>
+            <td>{item.artist}</td>
+            <td>{item.album}</td>
+            <td>{item.genre}</td>
+            <td>{item.release_date}</td>
+            <td>
+                <button onClick={(event) => this.deleteSong(item.id, event)}>
+                Delete Song
+                </button>
+            </td>
         </tr>
-      );
+        );
     });
     return (
-      <table>
-        <tr>
-          <th>ID</th>
-          <th>Song Title</th>
-          <th>Artist</th>
-          <th>Album</th>
-          <th>Genre</th>
-          <th>Release Date</th>
-        </tr>
+      <table id="musicTable">
+          <thead>
+            <tr>
+                <th>ID</th>
+                <th>Song Title</th>
+                <th>Artist</th>
+                <th>Album</th>
+                <th>Genre</th>
+                <th>Release Date</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
         {musicItem}
+        </tbody>
       </table>
     );
   };
